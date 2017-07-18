@@ -3,6 +3,8 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
+
+// Brute force solution O(n^2)
         /*
         std::vector<int> v;
         int i = 0;
@@ -21,6 +23,8 @@ public:
         }
         return v;
         */
+
+// O(n) solution
         std::vector<int> v;
         std::map<int, int> m;
         int check;
