@@ -5,7 +5,26 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
+        # O(n) time complexity
+        # O(n) space complexity
+        dictionary = {}
+        if len(s) != len(t):
+            return False
+        for i in range(len(s)):
+            if s[i] in dictionary:
+                dictionary[s[i]] += 1
+            else:
+                dictionary[s[i]] = 1
+            if t[i] in dictionary:
+                dictionary[t[i]] -= 1
+            else:
+                dictionary[t[i]] = -1
+        for v in dictionary.values():
+            if v != 0:
+                return False
+        return True
         
+        '''
         # O(nlog(n)) time complexity
         s = sorted(s)
         t = sorted(t)
@@ -15,8 +34,10 @@ class Solution(object):
         return s == t
     
         '''
+        
+        '''
         # Brute Force using two dictionaries
-        # O(n^2) time complexity
+        # O(n) time complexity
         
         dict_s = {}
         dict_t = {}
